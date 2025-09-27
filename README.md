@@ -1,5 +1,5 @@
 
-# DevOps Shell Scripts Toolkit
+# Shell-Scripts-for-Day-to-Day-DevOps-Tasks
 
 A collection of **day-to-day DevOps shell scripts** to automate common system administration and monitoring tasks. These scripts help in **monitoring, deployment, backups, service management, and system health checks**.
 
@@ -42,29 +42,62 @@ devops-shell-scripts/
 
 ---
 
-## 🛠 Usage
+## 📥 How to Use
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/devops-shell-scripts.git
+cd devops-shell-scripts
+````
+
+---
+
+### 2. Manual Execution
 
 Make scripts executable:
 
 ```bash
 chmod +x script_name.sh
-````
-
-Run a script:
-
-```bash
-./script_name.sh
 ```
 
-Example:
+Run any script manually:
 
 ```bash
 ./check_disk_usage.sh
+./backup_directory.sh
 ```
 
 ---
 
-## 📌 Prerequisites
+### 3. Automated Execution (Cron Jobs)
+
+To run scripts automatically at regular intervals:
+
+1. Open the crontab editor:
+
+```bash
+crontab -e
+```
+
+2. Add a cron job. Example:
+
+```bash
+# Run disk usage check every day at 8 AM
+0 8 * * * /path/to/devops-shell-scripts/check_disk_usage.sh
+
+# Backup /var/www/html every day at 2 AM
+0 2 * * * /path/to/devops-shell-scripts/backup_directory.sh
+
+# Run system health report every hour
+0 * * * * /path/to/devops-shell-scripts/system_health_report.sh >> /path/to/devops-shell-scripts/health.log 2>&1
+```
+
+> Replace `/path/to/devops-shell-scripts/` with the full path where you cloned the repo.
+
+---
+
+## 🛠 Prerequisites
 
 * Linux environment (Ubuntu/Debian recommended)
 * `bash` shell
@@ -74,6 +107,4 @@ Example:
   * `docker` for container monitoring
   * `openssl` for SSL checking
   * `git` for deployment scripts
-
-
 
