@@ -47,8 +47,8 @@ devops-shell-scripts/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/devops-shell-scripts.git
-cd devops-shell-scripts
+git clone https://github.com/Dinesh-Arivu/Shell-Scripts-for-Day-to-Day-DevOps-Tasks.git
+cd Shell-Scripts-for-Day-to-Day-DevOps-Tasks
 ````
 
 ---
@@ -58,14 +58,13 @@ cd devops-shell-scripts
 Make scripts executable:
 
 ```bash
-chmod +x script_name.sh
+sudo chmod +x script_name.sh
 ```
 
 Run any script manually:
 
 ```bash
-./check_disk_usage.sh
-./backup_directory.sh
+sudo ./script_name.sh
 ```
 
 ---
@@ -84,16 +83,7 @@ crontab -e
 
 ```bash
 # Run disk usage check every day at 8 AM
-0 8 * * * /path/to/devops-shell-scripts/check_disk_usage.sh
-
-# Backup /var/www/html every day at 2 AM
-0 2 * * * /path/to/devops-shell-scripts/backup_directory.sh
-
-# Run system health report every hour
-0 * * * * /path/to/devops-shell-scripts/system_health_report.sh >> /path/to/devops-shell-scripts/health.log 2>&1
-```
-
-> Replace `/path/to/devops-shell-scripts/` with the full path where you cloned the repo.
+0 8 * * * /path/to/Shell-Scripts-for-Day-to-Day-DevOps-Tasks/script_name.sh
 
 ---
 
