@@ -1,7 +1,7 @@
 #!/bin/bash
 # Service Status Monitor & Alert Script
 
-SERVICES=("nginx" "mysql" "apache2")   # Add services you want to monitor
+SERVICES=("nginx" "mysql" "apache2" "docker" "jenkins")   # Add services you want to monitor
 EMAIL="admin@example.com"
 
 for service in "${SERVICES[@]}"; do
