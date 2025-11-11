@@ -8,6 +8,8 @@ EMAIL="admin@example.com"   # Alert email
 df -P -x tmpfs -x devtmpfs | awk 'NR>1 {print $6, $5}' | while read mount usage; do
     usage_percent=$(echo "$usage" | sed 's/%//')
 
+    echo "Checking: $mount ($usage_percent%)"   # ✅ add this line for debugging
+
     if [ "$usage_percent" -ge "$THRESHOLD" ]; then
         message="⚠️ Disk usage alert on $(hostname)
 Mount: $mount
